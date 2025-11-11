@@ -1,4 +1,4 @@
-# Kreis Paderborn Learning App Prototype
+# Kreis Herford Learning App Prototype
 
 A modernized digital learning platform built with **React (frontend)** and **FastAPI (backend)**.  
 This app transforms traditional slide-based employee learning into an adaptive, interactive experience —  
