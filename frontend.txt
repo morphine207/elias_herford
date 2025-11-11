@@ -1,0 +1,161 @@
+🧭 Frontend (React)
+🧩 Core Responsibilities
+
+Render course slides dynamically from API.
+
+Gather user learning preferences (visual/audio/text).
+
+Display news relevant to slide topic.
+
+Provide quiz and feedback UI.
+
+Display optional 3D AI assistant.
+
+📁 Folder Structure
+frontend/
+ ├─ src/
+ │   ├─ components/
+ │   │   ├─ PreferencesPrompt.jsx
+ │   │   ├─ CoursePlayer.jsx
+ │   │   ├─ Slide.jsx
+ │   │   ├─ NewsBox.jsx
+ │   │   ├─ AIAssistant3D.jsx
+ │   │   ├─ FeedbackModal.jsx
+ │   │   └─ Quiz.jsx
+ │   ├─ pages/
+ │   │   └─ CoursePage.jsx
+ │   ├─ api/
+ │   │   └─ apiClient.js
+ │   ├─ App.jsx
+ │   └─ main.jsx
+ ├─ public/
+ │   ├─ index.html
+ └─ package.json
+
+🔧 Core Components & Behavior
+1. PreferencesPrompt.jsx
+
+Collects user learning style and stores in React state or localStorage.
+
+Fields:
+
+Learning preference: visual, audio, text
+
+Role description
+
+Detail level: short, balanced, in-depth
+
+News updates: on/off
+
+const [preferences, setPreferences] = useState({
+  style: "visual",
+  role: "",
+  detail: "balanced",
+  news: true,
+});
+
+function handleSubmit() {
+  localStorage.setItem("userPrefs", JSON.stringify(preferences));
+  navigate("/course/1");
+}
+
+2. CoursePlayer.jsx
+
+Main course container that loads course data.
+
+Responsibilities:
+
+Fetch /api/course/{id}
+
+Track slide index
+
+Display Slide + NewsBox + AIAssistant3D
+
+Include FeedbackModal on each slide
+
+useEffect(() => {
+  axios.get(`/api/course/${courseId}`).then(res => setCourse(res.data));
+}, []);
+
+3. Slide.jsx
+
+Renders one slide based on user preference.
+
+Logic:
+
+If visual: display image/video
+
+If audio: play narration
+
+If text: show written description
+
+function Slide({ slide, preferences }) {
+  if (preferences.style === "visual" && slide.image)
+    return <img src={slide.image} alt="Slide Visual" />;
+  if (preferences.style === "audio" && slide.audio)
+    return <audio controls src={slide.audio} />;
+  return <p>{slide.content}</p>;
+}
+
+4. NewsBox.jsx
+
+Fetches and displays news relevant to the slide’s topic.
+
+useEffect(() => {
+  if (prefs.news) {
+    axios.get(`/api/news?topic=${slide.topic}`).then(res => setNews(res.data));
+  }
+}, [slide]);
+
+5. AIAssistant3D.jsx
+
+Shows a static 3D avatar using Three.js or react-three-fiber.
+
+For prototype:
+
+Display simple 3D model
+
+Play welcome animation
+
+Optional: use SpeechSynthesis for voice greeting
+
+useEffect(() => {
+  const synth = window.speechSynthesis;
+  synth.speak(new SpeechSynthesisUtterance("Welcome to the course!"));
+}, []);
+
+6. FeedbackModal.jsx
+
+Small popup for per-slide feedback.
+
+function handleFeedback(rating, comment) {
+  axios.post("/api/feedback", { slide_id, rating, comment });
+}
+
+7. Quiz.jsx
+
+Displays multiple-choice questions at the end of the course.
+
+Data format from backend:
+
+{
+  "quiz": [
+    {
+      "question": "What does GDPR stand for?",
+      "options": ["General Data Privacy Rules", "General Data Protection Regulation"],
+      "answer": 1
+    }
+  ]
+}
+
+
+Frontend calculates score locally and shows result summary.
+
+🌐 API Client
+
+api/apiClient.js
+
+import axios from "axios";
+export default axios.create({
+  baseURL: "http://localhost:8000/api"
+});

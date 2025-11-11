@@ -1,0 +1,30 @@
+{
+  "id": 1,
+  "title": "Data Protection Basics",
+  "slides": [
+    {
+      "id": 1,
+      "topic": "Introduction",
+      "content": "Data protection ensures privacy and compliance in organizations.",
+      "image": "/static/images/intro.png",
+      "audio": "/static/audio/intro.mp3",
+      "keywords": ["data protection", "privacy"]
+    },
+    {
+      "id": 2,
+      "topic": "GDPR Overview",
+      "content": "GDPR applies to all EU citizens' data.",
+      "image": "/static/images/gdpr.png",
+      "audio": "/static/audio/gdpr.mp3",
+      "keywords": ["gdpr", "compliance"]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "What does GDPR stand for?",
+      "options": ["General Data Privacy Rules", "General Data Protection Regulation"],
+      "answer": 1
+    }
+  ]
+}
+

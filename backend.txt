@@ -1,0 +1,151 @@
+⚙️ Backend (FastAPI)
+🧩 Responsibilities
+
+Serve static JSON course data.
+
+Provide dynamic news data (filtered by keyword).
+
+Accept feedback from frontend and save locally.
+
+Serve static files (images/audio).
+
+📁 Folder Structure
+backend/
+ ├─ main.py
+ ├─ data/
+ │   ├─ course_1.json
+ │   ├─ news.json
+ │   └─ feedback.json
+ ├─ static/
+ │   ├─ images/
+ │   └─ audio/
+ └─ requirements.txt
+
+🧱 Core API Endpoints
+1. GET /api/course/{course_id}
+
+Returns course content (slides + quiz).
+
+@app.get("/api/course/{course_id}")
+def get_course(course_id: int):
+    with open(f"data/course_{course_id}.json") as f:
+        return json.load(f)
+
+2. GET /api/news
+
+Returns news filtered by keyword/topic.
+
+@app.get("/api/news")
+def get_news(topic: str):
+    with open("data/news.json") as f:
+        all_news = json.load(f)
+    return [n for n in all_news if topic.lower() in [k.lower() for k in n["keywords"]]]
+
+
+Sample news.json:
+
+[
+  {
+    "title": "New EU Data Privacy Updates",
+    "url": "https://news.example.com/eu-privacy",
+    "keywords": ["data protection", "gdpr"]
+  },
+  {
+    "title": "AI Regulation Act Passed",
+    "url": "https://news.example.com/ai-act",
+    "keywords": ["ai", "compliance"]
+  }
+]
+
+3. POST /api/feedback
+
+Appends feedback to a file.
+
+@app.post("/api/feedback")
+def save_feedback(feedback: dict):
+    feedback["timestamp"] = datetime.utcnow().isoformat()
+    with open("data/feedback.json", "a") as f:
+        f.write(json.dumps(feedback) + "\n")
+    return {"status": "received"}
+
+4. Static File Serving
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
+
+This lets the frontend access files like /static/images/gdpr_infographic.png.
+
+⚙️ FastAPI Example App (main.py)
+from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
+from fastapi.middleware.cors import CORSMiddleware
+import json
+from datetime import datetime
+
+app = FastAPI()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
+@app.get("/api/course/{course_id}")
+def get_course(course_id: int):
+    with open(f"data/course_{course_id}.json") as f:
+        return json.load(f)
+
+@app.get("/api/news")
+def get_news(topic: str):
+    with open("data/news.json") as f:
+        all_news = json.load(f)
+    return [n for n in all_news if topic.lower() in [k.lower() for k in n["keywords"]]]
+
+@app.post("/api/feedback")
+def save_feedback(feedback: dict):
+    feedback["timestamp"] = datetime.utcnow().isoformat()
+    with open("data/feedback.json", "a") as f:
+        f.write(json.dumps(feedback) + "\n")
+    return {"status": "received"}
+
+🧩 Data Example – data/course_1.json
+{
+  "id": 1,
+  "title": "Data Protection Basics",
+  "slides": [
+    {
+      "id": 1,
+      "topic": "Introduction",
+      "content": "Data protection ensures privacy and compliance in organizations.",
+      "image": "/static/images/intro.png",
+      "audio": "/static/audio/intro.mp3",
+      "keywords": ["data protection", "privacy"]
+    },
+    {
+      "id": 2,
+      "topic": "GDPR Overview",
+      "content": "GDPR applies to all EU citizens' data.",
+      "image": "/static/images/gdpr.png",
+      "audio": "/static/audio/gdpr.mp3",
+      "keywords": ["gdpr", "compliance"]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "What does GDPR stand for?",
+      "options": ["General Data Privacy Rules", "General Data Protection Regulation"],
+      "answer": 1
+    }
+  ]
+}
+
+🚀 Development Workflow
+Step	Task	Description
+1	Build FastAPI backend	Serve JSON + static files
+2	Create React app	Vite or CRA
+3	Connect API	Axios calls to FastAPI
+4	Add UI flow	Preferences → Course → Quiz
+5	Add 3D avatar	Use Three.js basic model
+6	Test locally	npm run dev + uvicorn main:app --reload
+7	Deploy	Render (backend) + Vercel (frontend)

@@ -1,0 +1,226 @@
+I want to build a learning application for Kreis Paderborn for their employees - it will be a mandatory digital 
+education for their employees which is mostly the a boring learning course which consists of sildes sometimes with
+audio. In the end they have multiple choice questions quiz where they need to get a certain score to complete the
+course. We want to create an improved application with an initial user prompt where we take the user 
+learning preference, if they would like more of a visual/audio/text based learning experience.
+
+The prompt question should be detailed but not too verbose, so that we can gauge the exact user learning preference,
+ job description, and content style - so we can use this to modify the content to a realistic extent to make it more 
+ custom to the user.
+
+There should also be a technical news/latest update box that is relevant to that particular slide content on the 
+bottom of the page and on the top right or the far right side a virtual AI assistant (a 3d gen ai based model 
+using 3js or any other framework, easy to implement)
+
+A feedback button on every silde that the user can click and that pops up(optional), and a detailed feedback at the
+end of the course
+
+Create a detailed workflow and a user story and also suggest the basic architecture for building a prototype
+(The tech stack I wish is React & FastAPI)
+
+ChatGPt - 
+
+Here’s a minimal, easy-to-build architecture and workflow using React + FastAPI, entirely file-based and JSON-driven — ideal for a first working prototype.
+
+⚙️ Simplified System Architecture
+ ┌──────────────────────────────┐
+ │ Frontend: React              │
+ │ - Renders slides & UI        │
+ │ - Handles user preference    │
+ │ - Shows quiz & feedback      │
+ │ - Fetches data from FastAPI  │
+ └──────────────┬───────────────┘
+                │  (HTTP/JSON)
+ ┌──────────────┴───────────────┐
+ │ Backend: FastAPI             │
+ │ - Serves static JSON data    │
+ │ - Adapts content per pref    │
+ │ - Stores feedback locally    │
+ │ - Fetches relevant news via  │
+ │   News API or static feed    │
+ └──────────────┬───────────────┘
+                │
+      Local JSON files in /data/
+
+
+No database, no auth, no external dependencies beyond HTTP requests.
+
+🧠 Core Flow (Step-by-Step)
+1. Start Page → Learning Preference Prompt
+
+When the app opens, show a simple form:
+
+Example fields:
+
+Learning preference → visual / audio / text
+
+Role → short free text
+
+Detail level → short / medium / in-depth
+
+Enable news updates → yes/no
+
+After submission, store preferences in React state (or localStorage).
+
+2. Fetch Course Content
+
+React fetches course content from a static JSON served by FastAPI, e.g.
+GET /api/course/<course_id> → loads slides with fields like:
+
+{
+  "title": "Data Protection Basics",
+  "slides": [
+    {
+      "id": 1,
+      "type": "text",
+      "topic": "GDPR Overview",
+      "content": "The General Data Protection Regulation ...",
+      "keywords": ["data protection", "privacy", "gdpr"],
+      "image": "/static/gdpr_infographic.png",
+      "audio": "/static/gdpr_intro.mp3"
+    }
+  ]
+}
+
+
+React displays the slide type based on user preference:
+
+If visual: show the infographic prominently.
+
+If audio: auto-play narration.
+
+If text: focus on written summary.
+
+3. Technical News Box
+
+Each slide’s keywords are used by FastAPI to fetch updates from a News API (or a cached JSON file).
+FastAPI endpoint example:
+
+@app.get("/api/news")
+def get_news(topic: str):
+    # For prototype: return static curated news snippets
+    with open("data/news.json") as f:
+        all_news = json.load(f)
+    return [n for n in all_news if topic.lower() in n["keywords"]]
+
+
+The frontend displays these in a small scrollable box below each slide.
+
+4. 3D AI Assistant (Right Sidebar)
+
+A simple Three.js canvas with a pre-made 3D avatar (no chat needed yet).
+Later, you can add:
+
+Voice greeting (“Hi, I’ll guide you through this course!”)
+
+Tooltip pop-ups
+
+Optional chatbot via API
+
+5. Feedback Button (Per Slide)
+
+Each slide has a small feedback button → popup with quick options:
+
+👍 Helpful
+
+👎 Confusing
+
+💬 Comment (optional text area)
+
+React sends this to FastAPI:
+POST /api/feedback
+
+{
+  "slide_id": 1,
+  "rating": "confusing",
+  "comment": "Too much text"
+}
+
+
+FastAPI appends it to a local file:
+
+@app.post("/api/feedback")
+def save_feedback(data: dict):
+    with open("data/feedback.json", "a") as f:
+        f.write(json.dumps(data) + "\n")
+    return {"status": "ok"}
+
+6. Quiz & Completion
+
+At the end of the course, show a multiple-choice quiz:
+
+{
+  "quiz": [
+    {
+      "question": "What does GDPR stand for?",
+      "options": ["General Data Privacy Rules", "General Data Protection Regulation"],
+      "answer": 1
+    }
+  ]
+}
+
+
+Frontend grades it locally → displays score → shows completion message.
+You can later post results to FastAPI for analytics, but initially you can just store them in localStorage.
+
+🧩 Folder / File Structure
+
+FastAPI (backend)
+
+backend/
+ ├─ main.py
+ ├─ data/
+ │   ├─ course_1.json
+ │   ├─ news.json
+ │   └─ feedback.json
+ └─ static/
+     ├─ images/
+     ├─ audio/
+     └─ videos/
+
+
+React (frontend)
+
+frontend/
+ ├─ src/
+ │   ├─ components/
+ │   │   ├─ PreferencePrompt.jsx
+ │   │   ├─ CoursePlayer.jsx
+ │   │   ├─ Slide.jsx
+ │   │   ├─ NewsBox.jsx
+ │   │   ├─ AIAssistant3D.jsx
+ │   │   ├─ FeedbackModal.jsx
+ │   │   └─ Quiz.jsx
+ │   ├─ pages/
+ │   │   └─ CoursePage.jsx
+ │   ├─ api/
+ │   │   └─ apiClient.js
+ │   └─ App.jsx
+ ├─ public/
+ └─ package.json
+
+🧠 Stack Summary
+Layer	Tech	Purpose
+Frontend	React + Vite	SPA for course UI
+Visualization	Three.js	Simple AI assistant avatar
+Styling	TailwindCSS	Quick, clean UI
+Backend	FastAPI	Serve static JSON, feedback, news
+Storage	JSON files	Persist content and feedback
+Hosting	Any (e.g. Vercel + Render)	Lightweight deploy
+
+📘 System Overview
+
+A lightweight adaptive learning web app for employee education.
+
+Goal:
+Deliver courses made of slides (text, image, audio, video) + quiz.
+Personalize the content format (visual/audio/text).
+Add a relevant technical news box and feedback buttons.
+
+Architecture Summary:
+
+Frontend (React)  <─── JSON / REST API ───>  Backend (FastAPI)
+       │                                           │
+   Renders course, quiz, 3D avatar                 │
+   Captures preferences & feedback                 │
+                                                    └── Stores data in JSON files
