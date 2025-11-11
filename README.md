@@ -1,274 +1,199 @@
-# Kreis Herford Learning App Prototype
+# Kreis Herford Learning Platform
 
-A modernized digital learning platform built with **React (frontend)** and **FastAPI (backend)**.  
-This app transforms traditional slide-based employee learning into an adaptive, interactive experience —  
-tailored to each user’s learning style (visual, auditory, or textual).
+An adaptive learning prototype for Kreis Herford that combines a **React + Vite** frontend with a **FastAPI** backend. The platform personalises course content, surfaces relevant technical news, and captures feedback to improve learning outcomes.
 
 ---
 
-## 🌟 Features Overview
+## Table of Contents
 
-- **Adaptive Learning Prompt:**  
-  Collects user learning preferences and job details to personalize course content delivery.
-
-- **Interactive Course Player:**  
-  Displays slides with text, audio, or visuals depending on preference.  
-  Includes quiz questions and a completion tracker.
-
-- **AI Assistant:**  
-  A lightweight **3D model** (via Three.js or Ready Player Me) integrated with the **OpenAI API**  
-  for real-time guidance and contextual responses.
-
-- **Technical News Feed:**  
-  Displays relevant updates related to each slide's content (powered by backend or static data).
-
-- **Feedback System:**  
-  Quick per-slide feedback button and a detailed final feedback modal.
+1. [Key Features](#key-features)
+2. [System Architecture](#system-architecture)
+3. [Project Structure](#project-structure)
+4. [Prerequisites](#prerequisites)
+5. [Setup & Installation](#setup--installation)
+   - [Backend (FastAPI)](#backend-fastapi)
+   - [Frontend (React + Vite)](#frontend-react--vite)
+6. [Running the App](#running-the-app)
+7. [Environment Variables](#environment-variables)
+8. [API Overview](#api-overview)
+9. [Data Sources](#data-sources)
+10. [Development Tips](#development-tips)
+11. [Next Steps & Ideas](#next-steps--ideas)
 
 ---
 
-## 🧱 Architecture Overview
+## Key Features
 
-React (Vite) + Tailwind + Three.js
-↓
-FastAPI (Python)
-↓
-OpenAI API
-
-yaml
-Copy code
-
-- **Frontend (React):** Handles UI/UX, course flow, AI assistant rendering, and API communication.
-- **Backend (FastAPI):** Provides endpoints for course content, news updates, quiz evaluation, and OpenAI integration.
-- **Data:** Stored as JSON files (no SQL/Redis for simplicity).
+- **Learning Preferences Prompt** – collects learning style, role, preferred depth, and news opt-in.
+- **Adaptive Course Player** – renders slides with visuals, text, and audio cues based on the selected style.
+- **Contextual News Feed** – fetches concise news summaries for the current slide topic via the backend.
+- **AI Assistant Panel** – displays an animated assistant with hooks for future chat/voice enhancements.
+- **Feedback Modal** – captures per-slide feedback and posts it back to the backend API for storage.
 
 ---
 
-## 🗂️ Project Structure
+## System Architecture
 
-learning-app/
+```
+React + Vite + Tailwind (frontend)
+         │
+         ├── REST calls
+         │
+FastAPI (backend)
+         │
+         ├── JSON data (course, feedback, news)
+         └── OpenAI API (news summarisation)
+```
+
+- **Frontend:** Handles routing, course flow, and UI interactions.
+- **Backend:** Serves course content, manages feedback, and generates topical news summaries.
+- **External Services:** OpenAI `gpt-4o-mini` for curated, concise news items.
+
+---
+
+## Project Structure
+
+```
 ├── backend/
-│ ├── main.py
-│ ├── course_data.json
-│ ├── requirements.txt
-│ ├── .env
-│ └── README.md
-│
-└── frontend/
-├── src/
-│ ├── components/
-│ │ ├── PreferencePrompt.jsx
-│ │ ├── CoursePlayer.jsx
-│ │ ├── AIAssistant.jsx
-│ │ ├── FeedbackModal.jsx
-│ │ └── NewsBox.jsx
-│ ├── App.jsx
-│ └── main.jsx
-├── package.json
-├── vite.config.js
-└── README.md
-
-yaml
-Copy code
+│   ├── data/
+│   │   ├── course_1.json
+│   │   ├── feedback.json
+│   │   └── news.json
+│   ├── main.py
+│   └── requirements.txt
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── CoursePlayer.tsx
+│   │   │   ├── PreferencesPrompt.tsx
+│   │   │   ├── NewsBox.tsx
+│   │   │   ├── FeedbackModal.tsx
+│   │   │   └── ui/...
+│   │   ├── pages/
+│   │   └── main.tsx
+│   ├── package.json
+│   └── vite.config.ts
+├── README.md
+└── .gitignore
+```
 
 ---
 
-## ⚙️ Backend Setup (FastAPI)
+## Prerequisites
 
-### 1️⃣ Prerequisites
-- Python 3.10+
-- `pip` (Python package manager)
+| Layer     | Requirement            |
+|-----------|------------------------|
+| Backend   | Python 3.10+           |
+| Frontend  | Node.js 18+ (with npm) |
+| Services  | OpenAI API key         |
 
-### 2️⃣ Installation Steps
+---
+
+## Setup & Installation
+
+### Backend (FastAPI)
 
 ```bash
 cd backend
 python -m venv venv
-source venv/bin/activate   # On Windows: venv\Scripts\activate
+venv\Scripts\activate           # Windows
+# source venv/bin/activate        # macOS / Linux
 pip install -r requirements.txt
-3️⃣ Create .env File
-Inside the backend folder:
+```
 
-bash
-Copy code
-touch .env
-Add your OpenAI key:
+Create `backend/.env` with your OpenAI credentials:
 
-ini
-Copy code
-OPENAI_API_KEY=your_openai_api_key_here
-4️⃣ Run the Server
-bash
-Copy code
-uvicorn main:app --reload
-The backend will run at:
-👉 http://127.0.0.1:8000
+```
+OPENAI_API_KEY=sk-********************************
+```
 
-5️⃣ Example requirements.txt
-nginx
-Copy code
-fastapi
-uvicorn
-python-dotenv
-openai
-💡 Example Backend Code (main.py)
-python
-Copy code
-from fastapi import FastAPI, Request
-from fastapi.middleware.cors import CORSMiddleware
-from dotenv import load_dotenv
-import os, json, openai
+### Frontend (React + Vite)
 
-load_dotenv()
-openai.api_key = os.getenv("OPENAI_API_KEY")
-
-app = FastAPI()
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_methods=["*"],
-    allow_headers=["*"]
-)
-
-@app.get("/course")
-def get_course():
-    with open("course_data.json", "r") as f:
-        return json.load(f)
-
-@app.post("/feedback")
-async def receive_feedback(request: Request):
-    data = await request.json()
-    return {"status": "success", "data": data}
-
-@app.post("/ai-assistant")
-async def ai_assistant(request: Request):
-    body = await request.json()
-    prompt = body.get("prompt", "")
-    response = openai.chat.completions.create(
-        model="gpt-4o-mini",
-        messages=[{"role": "system", "content": "You are a learning assistant."},
-                  {"role": "user", "content": prompt}]
-    )
-    return {"response": response.choices[0].message.content}
-🖥️ Frontend Setup (React + Vite)
-1️⃣ Prerequisites
-Node.js (v18 or newer)
-
-npm or yarn
-
-2️⃣ Installation Steps
-bash
-Copy code
+```bash
 cd frontend
 npm install
-3️⃣ Environment Variables
-If needed, create a .env file:
+```
 
-ini
-Copy code
-VITE_API_URL=http://127.0.0.1:8000
-4️⃣ Run the Frontend
-bash
-Copy code
-npm run dev
-Then open:
-👉 http://localhost:5173
+(Optional) create `frontend/.env` if you need to override defaults—see [Environment Variables](#environment-variables).
 
-🧩 Frontend Components
-1️⃣ PreferencePrompt.jsx
-Collects user learning preferences:
+---
 
-Learning type (Visual / Audio / Text)
+## Running the App
 
-Job title
+### 1. Start the backend
 
-Topics of interest
-
-2️⃣ CoursePlayer.jsx
-Displays slides dynamically:
-
-Renders content based on preference
-
-Shows AI assistant on right panel
-
-Includes feedback & quiz buttons
-
-3️⃣ AIAssistant.jsx
-3D model (Three.js or Ready Player Me)
-
-Animated virtual avatar
-
-Integrates OpenAI chat responses
-
-4️⃣ FeedbackModal.jsx
-Pop-up per-slide feedback or final detailed feedback submission.
-
-5️⃣ NewsBox.jsx
-Fetches or displays related technical updates under each slide.
-
-🧠 Example Data File (course_data.json)
-json
-Copy code
-{
-  "course_title": "Data Security Awareness",
-  "slides": [
-    {
-      "id": 1,
-      "title": "Understanding Data Privacy",
-      "content": "Data privacy refers to handling, processing, and storing of data...",
-      "news": "Latest: EU introduces new GDPR compliance measures (2025)."
-    },
-    {
-      "id": 2,
-      "title": "Password Best Practices",
-      "content": "Use unique, strong passwords with 12+ characters...",
-      "news": "Cybersecurity experts warn about new phishing attacks."
-    }
-  ],
-  "quiz": [
-    {
-      "question": "What does GDPR stand for?",
-      "options": ["General Data Protection Regulation", "Global Data Privacy Rules"],
-      "answer": "General Data Protection Regulation"
-    }
-  ]
-}
-🧠 Suggested Improvements (Future Versions)
-Add user login & tracking
-
-Integrate Azure OpenAI API for scalability
-
-Add progress analytics dashboard
-
-Allow PDF exports of completed courses
-
-Store feedback in cloud database (e.g., Cosmos DB)
-
-🚀 Run the Whole App
-1️⃣ Start backend:
-
-bash
-Copy code
+```bash
 cd backend
+venv\Scripts\activate           # or source venv/bin/activate
 uvicorn main:app --reload
-2️⃣ Start frontend:
+```
 
-bash
-Copy code
+Backend available at `http://127.0.0.1:8000`.
+
+### 2. Start the frontend
+
+```bash
 cd frontend
 npm run dev
-Then open:
-👉 http://localhost:5173
+```
 
-🧑‍💻 Tech Stack
-Layer	Technology	Purpose
-Frontend	React + Vite	UI rendering
-Styling	Tailwind CSS	Fast, modern styling
-3D Model	Three.js / Ready Player Me	AI avatar
-Backend	FastAPI	API endpoints
-AI	OpenAI API	Chat-based assistant
-Config	dotenv	Secure API key storage
+Frontend available at `http://localhost:8080` (configured in `vite.config.ts`).
 
-## 🧱 Architecture Overview
+---
 
+## Environment Variables
+
+| Location         | Variable            | Description                                           |
+|------------------|---------------------|-------------------------------------------------------|
+| `backend/.env`   | `OPENAI_API_KEY`    | Required for AI-powered news summaries                |
+| `frontend/.env`  | `VITE_API_BASE_URL` | Optional override for the backend base URL (defaults to proxy) |
+
+The frontend dev server proxy routes `/api` and `/static` requests to `http://localhost:8000`. Set `VITE_API_BASE_URL` only when the backend runs elsewhere (production, Docker, etc.).
+
+---
+
+## API Overview
+
+| Endpoint                          | Method | Description                                                |
+|----------------------------------|--------|------------------------------------------------------------|
+| `/api/course/{id}`               | GET    | Returns course data (`course_{id}.json`)                   |
+| `/api/news?keywords=...`         | GET    | Generates concise news summaries for supplied keywords     |
+| `/api/feedback`                  | POST   | Appends learner feedback to `feedback.json`                |
+
+All responses are JSON. Errors are returned with standard HTTP codes.
+
+---
+
+## Data Sources
+
+- `backend/data/course_1.json` – slide content, topics, and quiz stubs.
+- `backend/data/news.json` – optional seed items; AI fills gaps with real summaries.
+- `backend/data/feedback.json` – appended feedback entries (json list). Delete to reset.
+
+---
+
+## Development Tips
+
+- **Linting / Formatting**
+  - Frontend: `npm run lint`
+  - Backend: add `ruff` or `black` for consistent formatting
+- **Hot Reload**
+  - `uvicorn --reload` for backend
+  - `npm run dev` for frontend
+- **Proxy**
+  - Keep both servers running to avoid CORS issues during development.
+
+---
+
+## Next Steps & Ideas
+
+- Persist users and course progress in a database.
+- Add quiz evaluation and scoring UX.
+- Extend the AI assistant with chat history and voice playback.
+- Support additional courses and localisation options.
+- Deploy: FastAPI (Railway, Azure, AWS) + Frontend (Vercel, Netlify).
+
+---
+
+Feel free to open issues or submit PRs. Contributions are welcome! 😊
