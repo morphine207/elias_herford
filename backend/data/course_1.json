@@ -1,28 +1,223 @@
 {
   "id": 1,
-  "title": "Data Protection Basics",
+  "title": "KI sicher und richtig nutzen",
+  "media": {
+    "audio": "/static/audio/course_audio.m4a",
+    "video": "/static/video/course_video.mp4"
+  },
+  "summary": {
+    "overview": [
+      "Verstehen, was unter Künstlicher Intelligenz (KI) zu verstehen ist und wie sie sich von klassischer Automatisierung unterscheidet.",
+      "Einblick in EU-Regulierung, ethische Leitlinien und Risikoklassen für KI-Systeme.",
+      "Konkrete Regeln für Datenschutz, Informationssicherheit und verantwortungsvollen Einsatz von KI am Arbeitsplatz.",
+      "Praktische Einsatzbereiche – vom Arbeiten mit Prompts über Recherche bis hin zur Erstellung von Bild- und Videomaterial."
+    ],
+    "text": {
+      "title": "Kerngedanken für Text-Lernende",
+      "highlights": [
+        "KI-Systeme sind maschinengestützte, lernfähige Systeme, die Entscheidungen und Inhalte erzeugen können.",
+        "Der EU AI Act verfolgt einen risikobasierten Ansatz und fordert Transparenz, Grundrechtsschutz und menschliche Aufsicht.",
+        "Datenschutz, Datensicherheit und Urheberrecht setzen klare Grenzen: keine vertraulichen oder personenbezogenen Daten in offene KI-Systeme eingeben.",
+        "Gute Promptgestaltung und ausgewählte Einsatzbereiche heben Effizienzpotenziale, ohne ethische und rechtliche Leitplanken zu vernachlässigen."
+      ]
+    },
+    "visual": {
+      "title": "Video-Überblick für visuelle Lernende",
+      "highlights": [
+        "Kurzvorstellung der Inhalte: Definition, Regulierung, Verantwortung.",
+        "Visualisierung der vier EU-Risikoklassen und der sieben Ethikprinzipien.",
+        "Checklisten zu Datenschutz, Informationssicherheit und Transparenzpflichten.",
+        "Use-Cases und No-Gos anhand praxisnaher Beispiele."],
+      "media": "/static/video/course_video.mp4"
+    },
+    "audio": {
+      "title": "Audio-Zusammenfassung für auditives Lernen",
+      "script": "Hören Sie die wichtigsten Leitgedanken zur sicheren Nutzung von KI, zur rechtlichen Einordnung sowie zu praktischen Anwendungsszenarien im Verwaltungsalltag.",
+      "media": "/static/audio/course_audio.m4a"
+    }
+  },
   "slides": [
     {
       "id": 1,
-      "topic": "Introduction",
-      "content": "Data protection ensures privacy and compliance in organizations.",
-      "image": "/static/images/intro.png",
-      "audio": "/static/audio/intro.mp3",
-      "keywords": ["data protection", "privacy"]
+      "title": "Willkommen & Überblick",
+      "topic": "überblick",
+      "content": "Künstliche Intelligenz am Arbeitsplatz – sichere und verantwortliche Nutzung.",
+      "bulletPoints": [
+        "Was ist KI?",
+        "Ethische Fragen und Verantwortung",
+        "Prompts und Einsatzbereiche",
+        "Regulatorische Leitplanken"
+      ],
+      "keywords": ["ki", "überblick"]
     },
     {
       "id": 2,
-      "topic": "GDPR Overview",
-      "content": "GDPR applies to all EU citizens' data.",
-      "image": "/static/images/gdpr.png",
-      "audio": "/static/audio/gdpr.mp3",
-      "keywords": ["gdpr", "compliance"]
+      "title": "Definition: Künstliche Intelligenz",
+      "topic": "definition",
+      "content": "Formale Definition gemäß EU-Verordnung 2024/1689.",
+      "bulletPoints": [
+        "Maschinengestützte Systeme mit unterschiedlichen Autonomiegraden",
+        "Ziel: Vorhersagen, Inhalte, Empfehlungen oder Entscheidungen generieren",
+        "Ergebnisse beeinflussen physische oder virtuelle Umgebungen",
+        "Menschen entwickeln Algorithmen und überwachen den Betrieb"
+      ],
+      "keywords": ["definition", "eu ai act"]
+    },
+    {
+      "id": 3,
+      "title": "KI vs. Automatisierung",
+      "topic": "unterschiede",
+      "content": "Abgrenzung von intelligenten und regelbasierten Systemen.",
+      "bulletPoints": [
+        "Automatisierung folgt festen Regeln ohne Lernfähigkeit",
+        "KI lernt aus Daten und passt sich neuen Situationen an",
+        "Kognitive Fähigkeiten: Verstehen, Entscheiden, Problemlösen",
+        "Prozessautomatisierung bleibt regelbasierte Unterstützung"
+      ],
+      "keywords": ["vergleich", "automatisierung"]
+    },
+    {
+      "id": 4,
+      "title": "Kategorien, Modelle und Systeme",
+      "topic": "modelle",
+      "content": "Von schwacher KI bis zu Systemarchitekturen.",
+      "bulletPoints": [
+        "Schwache KI löst klar definierte Aufgaben (z. B. Chatbots)",
+        "Starke KI ist bisher hypothetisch",
+        "KI-Modelle enthalten trainierte Parameter",
+        "KI-Systeme umfassen Software, Interfaces und Infrastruktur"
+      ],
+      "keywords": ["modelle", "systeme"]
+    },
+    {
+      "id": 5,
+      "title": "Technologien & Generative Modelle",
+      "topic": "technologien",
+      "content": "Grundlagen neuronaler Netze, Deep Learning und NLP.",
+      "bulletPoints": [
+        "Neuronale Netze erkennen Muster",
+        "Deep Learning verarbeitet große Datenmengen",
+        "Natürliche Sprachverarbeitung ermöglicht Chatbots",
+        "Objekterkennung interpretiert visuelle Daten",
+        "Generative Modelle erzeugen neue Inhalte auf Basis gelernter Muster"
+      ],
+      "keywords": ["technologien", "generative ki"]
+    },
+    {
+      "id": 6,
+      "title": "EU AI Act & Risikoklassen",
+      "topic": "regulierung",
+      "content": "Rechtsrahmen, Grundrechtsschutz und Risikokategorien.",
+      "bulletPoints": [
+        "Risikobasierter Ansatz: von minimal bis unannehmbar",
+        "Transparenz, Nachvollziehbarkeit und menschliche Kontrolle",
+        "Minimales Risiko: Spamfilter, Sprachassistenz",
+        "Begrenztes Risiko: Kennzeichnungspflicht für KI-Inhalte",
+        "Hohes Risiko: strenge Auflagen, Konformitätsprüfung",
+        "Unannehmbares Risiko: soziale Bewertung, Verhaltensmanipulation"
+      ],
+      "keywords": ["regulierung", "risiko"]
+    },
+    {
+      "id": 7,
+      "title": "Ethikleitlinien & Verantwortung",
+      "topic": "ethik",
+      "content": "Vertrauenswürdige KI nach Leitlinien der EU-Kommission.",
+      "bulletPoints": [
+        "Rechtmäßigkeit, Ethik und Robustheit als Grundpfeiler",
+        "Menschliche Aufsicht und technische Sicherheit",
+        "Privatsphäre, Datenqualität und Transparenz",
+        "Vielfalt, Fairness sowie gesellschaftlicher Nutzen",
+        "Klare Verantwortlichkeiten und Rechenschaftspflicht"
+      ],
+      "keywords": ["ethik", "leitlinien"]
+    },
+    {
+      "id": 8,
+      "title": "Datenschutz & Informationssicherheit",
+      "topic": "datenschutz",
+      "content": "Klare Grenzen, Beispiele und Meldewege.",
+      "bulletPoints": [
+        "Keine personenbezogenen oder vertraulichen Daten in offene KI eingeben",
+        "Anonymisierung und kritische Prüfung der Ausgaben",
+        "Beispielhafte No-Gos: personenbezogene Listen, private Gratulationen",
+        "Nutzung über persönliche dienstliche Accounts",
+        "Meldung verdächtiger Aktivitäten, Protokollierung zur Forensik"
+      ],
+      "keywords": ["datenschutz", "sicherheit"]
+    },
+    {
+      "id": 9,
+      "title": "Prompt Gestaltung & Einsatzbereiche",
+      "topic": "prompts",
+      "content": "Gute Prompts, geeignete Aufgaben und Ausschlussbereiche.",
+      "bulletPoints": [
+        "Gute Prompts sind spezifisch, kontextreich und strukturiert",
+        "Schlechte Prompts sind vage oder schließen Informationen aus",
+        "Einsatz: Texterstellung, Zusammenfassungen, Entscheidungsunterstützung",
+        "Kein Einsatz: Bewertung von Sozialverhalten oder Verhaltensmanipulation"
+      ],
+      "keywords": ["prompts", "einsatz"]
+    },
+    {
+      "id": 10,
+      "title": "Anwendungen & Kreative Nutzung",
+      "topic": "anwendungen",
+      "content": "Von Tabellen bis Bildgenerierung – Chancen & Risiken.",
+      "bulletPoints": [
+        "Tabellen & Visualisierungen aus Texten ableiten",
+        "Daten strukturieren, Erklärvideos erstellen, Plausibilitätsprüfungen",
+        "Recherchearbeit beschleunigen, Wissensdatenbanken pflegen",
+        "Ideen generieren, Dialoge führen, Agenden entwickeln",
+        "Bildgenerierung: Nutzen vs. Risiken wie Verzerrung oder Urheberrecht"
+      ],
+      "keywords": ["anwendungen", "kreativität"]
     }
   ],
   "quiz": [
     {
-      "question": "What does GDPR stand for?",
-      "options": ["General Data Privacy Rules", "General Data Protection Regulation"],
+      "question": "Was sollte bei der Generierung von Inhalten mit KI berücksichtigt werden?",
+      "options": [
+        "Die Inhalte werden automatisch in Tabellenform ausgegeben.",
+        "Die KI entscheidet eigenständig, welche Idee umgesetzt wird.",
+        "KI kann aus Texten, Mindmaps oder digitalen Grafiken automatisch Tabellen erstellen."
+      ],
+      "answer": 2
+    },
+    {
+      "question": "Welche Aussage beschreibt eine verantwortungsbewusste Verwendung von KI-Modellen im Arbeitsumfeld?",
+      "options": [
+        "Ein anonymer Zugang reicht aus.",
+        "Jede Verwendung muss über ein persönliches Benutzerkonto mit dienstlicher E-Mail-Adresse erfolgen.",
+        "Es dürfen beliebige KI-Modelle ohne Prüfung eingesetzt werden."
+      ],
+      "answer": 1
+    },
+    {
+      "question": "Welche Daten dürfen als Input bei der Nutzung von KI verwendet werden?",
+      "options": [
+        "Daten von Personen des öffentlichen Lebens",
+        "Daten von Personen aus meinem Umfeld",
+        "Medizinische Daten"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Was ist ein wesentliches Merkmal der Künstlichen Intelligenz?",
+      "options": [
+        "KI hat ein eigenes Verständnis und trifft Entscheidungen ohne Daten.",
+        "Sie arbeitet vollständig unabhängig von Menschen.",
+        "Sie basiert auf Software, Algorithmen und Verfahren, die von Menschen entwickelt wurden."
+      ],
+      "answer": 2
+    },
+    {
+      "question": "Welche Anforderungen bestehen bei der Auswahl und Nutzung einer KI?",
+      "options": [
+        "Systeme sollten immer ohne menschliche Kontrolle arbeiten.",
+        "Sicherheit, Nachvollziehbarkeit und Verantwortlichkeit.",
+        "Die Systeme stehen frei ohne Vorgaben zur Verfügung."
+      ],
       "answer": 1
     }
   ]

@@ -1,0 +1,271 @@
+{
+  "name": "Content Mind Map Graph",
+  "children": [
+    {
+      "name": "Features",
+      "children": [
+        {
+          "name": "Refined Summary"
+        },
+        {
+          "name": "Outline Creation",
+          "children": [
+            {
+              "name": "Drafting",
+              "children": [
+                { "name": "Blog Post" },
+                { "name": "Email Communication" }
+              ]
+            },
+            {
+              "name": "Format Generation",
+              "children": [
+                {
+                  "name": "Newsletter",
+                  "children": [
+                    { "name": "Topic Specific Headlines" }
+                  ]
+                },
+                {
+                  "name": "Scripting",
+                  "children": [
+                    { "name": "Short-form Content" }
+                  ]
+                },
+                { "name": "Headlines" },
+                { "name": "Social Media Posts" }
+              ]
+            },
+            {
+              "name": "Knowledge Work",
+              "children": [
+                {
+                  "name": "Synthesis",
+                  "children": [
+                    { "name": "Multiple Sources" }
+                  ]
+                },
+                {
+                  "name": "Topics",
+                  "children": [
+                    { "name": "Complex Subjects" }
+                  ]
+                },
+                { "name": "Drafts" },
+                { "name": "Angles" }
+              ]
+            },
+            {
+              "name": "Web Content",
+              "children": [
+                { "name": "SEO-friendly Outlines" },
+                { "name": "Headlines Copy" }
+              ]
+            },
+            {
+              "name": "Bibliography",
+              "children": [
+                { "name": "Summarize Sources for Research" }
+              ]
+            },
+            {
+              "name": "Outlining",
+              "children": [
+                { "name": "Main Points Summarized" }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Suggested Questions",
+          "children": [
+            {
+              "name": "Source Grounding",
+              "children": [
+                { "name": "Relevant Passages from Source" }
+              ]
+            },
+            {
+              "name": "Helpful Queries",
+              "children": [
+                { "name": "Leading Questions" }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Answering Questions",
+          "children": [
+            {
+              "name": "Citations",
+              "children": [
+                { "name": "Clickable Citations" }
+              ]
+            },
+            {
+              "name": "Help",
+              "children": [
+                { "name": "Clarify Complex Concepts" }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Summarizing",
+          "children": [
+            {
+              "name": "Audio",
+              "children": [
+                { "name": "Source-Grounded Audio Integration" }
+              ]
+            },
+            {
+              "name": "Text",
+              "children": [
+                { "name": "Key Themes and Points" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Source Grounding",
+      "children": [
+        { "name": "Supported File Formats" },
+        {
+          "name": "Types of Sources",
+          "children": [
+            {
+              "name": "Google Drive",
+              "children": [
+                { "name": "Docs" },
+                { "name": "Slides" }
+              ]
+            },
+            { "name": "Text Files (.txt)" },
+            {
+              "name": "PDFs",
+              "children": [
+                { "name": "Scanned & Text-based" }
+              ]
+            },
+            {
+              "name": "Web URLs",
+              "children": [
+                { "name": "Copied / Pasted" }
+              ]
+            },
+            { "name": "Copied Text" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Types of Models",
+      "children": [
+        {
+          "name": "Large Language Model",
+          "children": [
+            {
+              "name": "Gemini 1.5 Pro",
+              "children": [
+                { "name": "Multimodal Input / Output" }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Use Cases",
+          "children": [
+            {
+              "name": "Personal",
+              "children": [
+                { "name": "Note-taking" },
+                {
+                  "name": "Learning & Development",
+                  "children": [
+                    { "name": "Understanding Complex Topics" }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Professional",
+              "children": [
+                { "name": "Summarizing User Research" },
+                {
+                  "name": "Content Creation",
+                  "children": [
+                    { "name": "Drafting Blog Posts" },
+                    { "name": "Script Writing" }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Tools",
+          "children": [
+            {
+              "name": "Task-specific",
+              "children": [
+                { "name": "Note-taking" },
+                { "name": "Text Editing" }
+              ]
+            },
+            {
+              "name": "AI Assistant",
+              "children": [
+                { "name": "Chatbot" }
+              ]
+            },
+            {
+              "name": "Productivity",
+              "children": [
+                { "name": "Workflow Management" }
+              ]
+            },
+            {
+              "name": "Study Tools",
+              "children": [
+                {
+                  "name": "Flashcard Generation",
+                  "children": [
+                    { "name": "Key Terms / Concepts Summary" }
+                  ]
+                },
+                { "name": "Summaries" },
+                { "name": "Study Guides" }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Features",
+          "children": [
+            {
+              "name": "Collaboration",
+              "children": [
+                { "name": "Share Notebooks / Sources" }
+              ]
+            },
+            {
+              "name": "Conversation History",
+              "children": [
+                { "name": "Saved Conversations" }
+              ]
+            },
+            {
+              "name": "Data Export",
+              "children": [
+                { "name": "Google Docs" }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -8,12 +8,8 @@ import FeedbackModal from "./FeedbackModal";
 import { Progress } from "@/components/ui/progress";
 import { api } from "@/lib/api";
 import { toast } from "sonner";
-
-interface CourseData {
-  id: string;
-  title: string;
-  slides: SlideData[];
-}
+import { useNavigate } from "react-router-dom";
+import HeaderUtilities from "@/components/HeaderUtilities";
 
 interface SlideData {
   id: number;
@@ -21,10 +17,23 @@ interface SlideData {
   title: string;
   topic: string;
   content?: string;
+  bulletPoints?: string[];
   image?: string;
   video?: string;
   audio?: string;
   keywords?: string[];
+}
+
+interface CourseMedia {
+  audio?: string;
+  video?: string;
+}
+
+interface CourseData {
+  id: string;
+  title: string;
+  media?: CourseMedia;
+  slides: SlideData[];
 }
 
 interface LearningPreferences {
@@ -39,6 +48,7 @@ interface CoursePlayerProps {
 }
 
 const CoursePlayer = ({ courseId }: CoursePlayerProps) => {
+  const navigate = useNavigate();
   const [courseData, setCourseData] = useState<CourseData | null>(null);
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
@@ -85,9 +95,21 @@ const CoursePlayer = ({ courseId }: CoursePlayerProps) => {
   };
 
   const handleNext = () => {
-    if (courseData && currentSlideIndex < courseData.slides.length - 1) {
-      setCurrentSlideIndex(currentSlideIndex + 1);
+    if (!courseData) {
+      return;
     }
+
+    if (currentSlideIndex < courseData.slides.length - 1) {
+      setCurrentSlideIndex(currentSlideIndex + 1);
+      return;
+    }
+
+    handleCompleteCourse();
+  };
+
+  const handleCompleteCourse = () => {
+    localStorage.setItem(`course_${courseId}_status`, "content-complete");
+    navigate(`/course/${courseId}/summary?stage=post`);
   };
 
   if (isLoading || !courseData) {
@@ -102,6 +124,12 @@ const CoursePlayer = ({ courseId }: CoursePlayerProps) => {
   }
 
   const currentSlide = courseData.slides[currentSlideIndex];
+  const displaySlide: SlideData = {
+    ...currentSlide,
+    audio: currentSlide.audio ?? courseData.media?.audio,
+    video: currentSlide.video ?? courseData.media?.video,
+  };
+  const isLastSlide = currentSlideIndex === courseData.slides.length - 1;
   const progress = ((currentSlideIndex + 1) / courseData.slides.length) * 100;
 
   return (
@@ -109,7 +137,7 @@ const CoursePlayer = ({ courseId }: CoursePlayerProps) => {
       {/* Top Bar */}
       <header className="border-b border-border bg-card shadow-soft">
         <div className="container mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between gap-4">
             <div className="flex items-center gap-4">
               <h1 className="text-xl font-bold text-foreground">{courseData.title}</h1>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -121,14 +149,17 @@ const CoursePlayer = ({ courseId }: CoursePlayerProps) => {
                 </div>
               </div>
             </div>
-            <Button
-              variant="outline"
-              onClick={() => setShowFeedbackModal(true)}
-              className="rounded-xl"
-            >
-              <MessageSquare className="w-4 h-4 mr-2" />
-              Give Feedback
-            </Button>
+            <div className="flex items-center gap-3">
+              <HeaderUtilities />
+              <Button
+                variant="outline"
+                onClick={() => setShowFeedbackModal(true)}
+                className="rounded-xl"
+              >
+                <MessageSquare className="w-4 h-4 mr-2" />
+                Feedback
+              </Button>
+            </div>
           </div>
         </div>
       </header>
@@ -163,8 +194,25 @@ const CoursePlayer = ({ courseId }: CoursePlayerProps) => {
         </aside>
 
         {/* Center - Slide Content */}
-        <main className="col-span-7">
-          <Slide slide={currentSlide} preferences={preferences} />
+        <main className="col-span-7 space-y-6">
+          {preferences.style === "visual" && courseData.media?.video && !currentSlide.video && (
+            <div className="bg-muted/40 rounded-xl p-4">
+              <h3 className="text-sm font-semibold text-foreground mb-2">Kursvideo</h3>
+              <video controls className="w-full rounded-xl" src={courseData.media.video}>
+                Your browser does not support the video element.
+              </video>
+            </div>
+          )}
+          {preferences.style === "audio" && courseData.media?.audio && !currentSlide.audio && (
+            <div className="bg-muted/40 rounded-xl p-4">
+              <h3 className="text-sm font-semibold text-foreground mb-2">Audioversion</h3>
+              <audio controls className="w-full">
+                <source src={courseData.media.audio} />
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          )}
+          <Slide slide={displaySlide} preferences={preferences} />
         </main>
 
         {/* Right Sidebar - AI Assistant & News */}
@@ -197,12 +245,8 @@ const CoursePlayer = ({ courseId }: CoursePlayerProps) => {
                 Progress: {Math.round(progress)}%
               </span>
             </div>
-            <Button
-              onClick={handleNext}
-              disabled={currentSlideIndex === courseData.slides.length - 1}
-              className="rounded-xl"
-            >
-              Next
+            <Button onClick={handleNext} className="rounded-xl">
+              {isLastSlide ? "Zur Zusammenfassung" : "Weiter"}
             </Button>
           </div>
           <Progress value={progress} className="h-1" />

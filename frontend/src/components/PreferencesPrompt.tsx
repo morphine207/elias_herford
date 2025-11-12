@@ -13,6 +13,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import aiAvatar from "@/assets/ai-avatar.png";
+import HeaderUtilities from "@/components/HeaderUtilities";
 
 interface LearningPreferences {
   style: "visual" | "audio" | "text";
@@ -32,7 +33,7 @@ const PreferencesPrompt = () => {
 
   const handleSubmit = () => {
     localStorage.setItem("userPrefs", JSON.stringify(preferences));
-    navigate("/course/1");
+    navigate("/course/1/summary?stage=pre");
   };
 
   const learningStyles = [
@@ -71,11 +72,12 @@ const PreferencesPrompt = () => {
               <a href="/" className="text-primary font-medium border-b-2 border-primary pb-1">
                 Home
               </a>
-              <a href="/about" className="text-muted-foreground hover:text-foreground transition-colors">
-                About Learning Platform
+              <a href="/courses" className="text-muted-foreground hover:text-foreground transition-colors">
+                Kursübersicht
               </a>
             </nav>
           </div>
+          <HeaderUtilities />
         </div>
       </header>
 

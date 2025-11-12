@@ -1,0 +1,44 @@
+# Next Tasks & Experience Flow
+
+
+## 1. Content Summary Page (after Preferences)
+- Present a summary of the selected content once the learner sets their preferences.
+- Include:
+  - Main ideas and highlights formatted according to the chosen learning style (visual / audio / text).
+  - Persistent modules: feedback box, virtual assistant panel, and tech news board (state-of-the-art updates, with the option to convert items into proposals or new content).
+
+## 2. Initial Quiz & Evaluation Flow
+1. After the summary, route the learner to an initial quiz covering the key points.
+2. On completion:
+   - **Pass**
+     - Show a content-specific leaderboard displaying completion time, average score, and peer ranking.
+     - Provide optional internal interaction tools (messaging, team chat, discussion threads).
+     - Display a community box where colleagues can share, comment on, or rate user-generated assets (videos, podcasts, tool suggestions).
+     - Redirect to a content overview page listing all courses, current progress, and options to start another course.
+   - **Fail**
+
+## 3. Persistent UI Enhancements (all pages)
+- Dark / light mode toggle for accessibility.
+- Language switcher (German / English) in the top-right corner.
+
+
+Next_priority-
+
+## 1. Role Selection Entry Point
+- Introduce a pre-landing prompt where users choose their role (**Trainer** or **Admin**).
+- Redirect each role to a tailored dashboard or interface.
+
+## 2. Admin Panel Requirements
+- Content creation and management tooling (leverage existing PDFs, audio files, etc.).
+- Analytics dashboard (user performance, course statistics, engagement metrics).
+- User and leaderboard management.
+- Feedback and reporting workflows.
+
+3. On completion:
+   
+   - **Fail**
+   {
+     - Trigger a personalised remedial learning path based on weak areas.
+     - After retaking the relevant material, re-run the quiz.
+     - Continue loop until the learner passes; escalate to additional training if they fail repeatedly.
+   }

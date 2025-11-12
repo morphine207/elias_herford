@@ -3,22 +3,50 @@
 // Use proxy in development, or env variable in production
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || (import.meta.env.DEV ? '' : 'http://localhost:8000');
 
+interface CourseMedia {
+  audio?: string;
+  video?: string;
+}
+
+interface CourseSummarySection {
+  title?: string;
+  highlights?: string[];
+  media?: string;
+  script?: string;
+}
+
+interface CourseSummary {
+  overview: string[];
+  text: CourseSummarySection;
+  visual: CourseSummarySection;
+  audio: CourseSummarySection;
+}
+
+interface CourseSlide {
+  id: number;
+  title: string;
+  topic: string;
+  content: string;
+  bulletPoints?: string[];
+  image?: string;
+  audio?: string;
+  video?: string;
+  keywords?: string[];
+}
+
+interface CourseQuizQuestion {
+  question: string;
+  options: string[];
+  answer: number;
+}
+
 interface CourseData {
   id: number;
   title: string;
-  slides: Array<{
-    id: number;
-    topic: string;
-    content: string;
-    image?: string;
-    audio?: string;
-    keywords?: string[];
-  }>;
-  quiz?: Array<{
-    question: string;
-    options: string[];
-    answer: number;
-  }>;
+  media?: CourseMedia;
+  summary?: CourseSummary;
+  slides: CourseSlide[];
+  quiz?: CourseQuizQuestion[];
 }
 
 interface NewsItem {
@@ -36,7 +64,7 @@ interface FeedbackData {
 }
 
 // Transform backend slide data to frontend format
-function transformSlide(slide: CourseData['slides'][0]) {
+function transformSlide(slide: CourseSlide) {
   // Use first keyword for topic, or fallback to topic name normalized
   const topicKeyword = slide.keywords && slide.keywords.length > 0 
     ? slide.keywords[0] 
@@ -54,21 +82,57 @@ function transformSlide(slide: CourseData['slides'][0]) {
   return {
     id: slide.id,
     type: 'content' as const,
-    title: slide.topic, // Backend uses "topic" as the title
+    title: slide.title || slide.topic,
     topic: topicKeyword, // Use first keyword for news fetching (backward compatibility)
     content: slide.content,
     image: getAssetUrl(slide.image),
     audio: getAssetUrl(slide.audio),
+    video: getAssetUrl(slide.video),
+    bulletPoints: slide.bulletPoints || [],
     keywords: slide.keywords || [], // Preserve keywords for better news matching
   };
 }
 
 // Transform backend course data to frontend format
 function transformCourseData(data: CourseData) {
+  const resolveMedia = (path?: string) => {
+    if (!path) return undefined;
+    if (path.startsWith('http')) return path;
+    return API_BASE_URL ? `${API_BASE_URL}${path}` : path;
+  };
+
+  const resolvedMedia: CourseMedia | undefined = data.media
+    ? {
+        audio: resolveMedia(data.media.audio),
+        video: resolveMedia(data.media.video),
+      }
+    : undefined;
+
+  const resolvedSummary: CourseSummary | undefined = data.summary
+    ? {
+        overview: data.summary.overview,
+        text: {
+          ...data.summary.text,
+          media: resolveMedia(data.summary.text.media),
+        },
+        visual: {
+          ...data.summary.visual,
+          media: resolveMedia(data.summary.visual.media),
+        },
+        audio: {
+          ...data.summary.audio,
+          media: resolveMedia(data.summary.audio.media),
+        },
+      }
+    : undefined;
+
   return {
     id: String(data.id),
     title: data.title,
+    media: resolvedMedia,
+    summary: resolvedSummary,
     slides: data.slides.map(transformSlide),
+    quiz: data.quiz,
   };
 }
 

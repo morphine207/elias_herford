@@ -1,0 +1,47 @@
+Frage 1 (1/5) Was sollte bei der Generierung von Inhalten mit einer Kl berücksichtigt werden? 
+
+Die Inhalte werden automatisch in Tabellenform ausgegeben. 
+
+Die KI entscheidet eigenständig, welche Idee umgesetzt wird. 
+
+KI kann aus Texten, Mindmaps oder digitalen Grafiken automatisch Tabellen erstellen. [True] 
+
+-------------------------------------------------------------------------------------------------------
+
+Frage 2 (2/5) Welche der folgenden Aussagen beschreibt eine verantwortungsbewusste Verwendung von KI-Modellen in Ihrem Arbeitsumfeld? 
+
+Bei der Verwendung von KI-Modelle ist es ausreichend, einen anonymen Zugang zu nutzen. 
+
+Jede Verwendung muss über ein persönliches Benutzerkonto mit dienstlicher E-Mail-Adresse erfolgen. [True]
+
+Es dürfen beliebige KI-Modelle eingesetzt werden. 
+
+-------------------------------------------------------------------------------------------------------
+
+Frage 3 (3/5) Welche Daten dürfen als Input bei der Nutzung von Kl verwendet werden? 
+
+Daten von Personen des öffentlichen Lebens [True]
+
+Daten von Personen aus meinem Umfeld 
+
+Medizinische Daten 
+
+-------------------------------------------------------------------------------------------------------
+
+Frage 4 (4/5) Was ist ein wesentliches Merkmal der Künstlichen Intelligenz (KI)? 
+
+KI hat ein eigenes Verständnis und kann eigenständig Entscheidungen treffen. 
+
+Sie ist vollständig von Menschen unabhängig und arbeitet ohne Daten. 
+
+Sie basiert auf Software, Algorithmen oder technischen Verfahren, die von Menschen entwickelt wurden. [True]
+
+-------------------------------------------------------------------------------------------------------
+
+Frage 5 (5/5) Welche Anforderungen bestehen bei der Auswahl und Nutzung einer KI? 
+
+Die Systeme sollten immer ohne menschliche Kontrolle arbeiten. 
+
+Sicherheit, Nachvollziehbarkeit, Verantwortlichkeit [True]
+
+Die Systeme stehen frei zur Verfügung.

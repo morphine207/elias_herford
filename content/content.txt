@@ -1,0 +1,351 @@
+```
+HERZLICH WILLKOMMEN ZUR UNTERWEISUNG
+Künstliche Intelligenz am Arbeitsplatz - KI sicher und richtig nutzen
+
+---
+ÜBERBLICK
+* WAS IST KÜNSTLICHE INTELLIGENZ (KI)?
+* ETHISCHE FRAGEN
+* VERANTWORTUNGSVOLLER EINSATZ VON KI IM BERUFLICHEN ALLTAG
+* PROMPTS UND EINSATZBEREICHE
+
+---
+WAS IST KÜNSTLICHE INTELLIGENZ (KI)?
+
+---
+DEFINITION: KÜNSTLICHE INTELLIGENZ (KI)
+"Künstliche Intelligenz ist ein maschinengestütztes System, das für einen in unterschiedlichem Grade autonomen Betrieb ausgelegt ist und das nach seiner Betriebsaufnahme anpassungsfähig sein kann und das aus den erhaltenen Eingaben für explizite oder implizite Ziele ableitet, wie Ausgaben, wie etwa Vorhersagen, Inhalte, Empfehlungen oder Entscheidungen, erstellt werden, die physische oder virtuelle Umgebungen beeinflussen können"
+Quelle: Verordnung (EU) 2024/1689, Art. 3 Nr. 1
+
+* Maschinengestütztes System: Ein System, das auf Software, Algorithmen oder technischen Verfahren basiert, die von Menschen entwickelt wurden.
+* Unterschiedliche Autonomiegrade: Kann je nach Design mehr oder weniger eigenständig arbeiten.
+* Hauptziel: Ergebnisse wie Vorhersagen, Empfehlungen oder Entscheidungen erstellen, basierend auf Daten und Anweisungen
+* Auswirkungen: Diese Ergebnisse beeinflussen either die physische Welt (z. B. Ampelsteuerung) oder virtuelle Umgebungen (z. B. Prüfung von Anträgen).
+
+---
+UNTERSCHIED KI / AUTOMATISIERUNG
+Künstliche Intelligenz (KI) und Automatisierung werden oft miteinander verwechselt, verfolgen jedoch unterschiedliche Ansätze.
+Während Automatisierung feste Abläufe nach vordefinierten Regeln ausführt, ist KI in der Lage, aus Daten zu lernen und sich flexibel an neue Situationen anzupassen.
+Der Unterschied liegt also vor allem im Maß an „Eigenständigkeit" und Lernfähigkeit.
+
+Künstliche Intelligenz: Als Künstliche Intelligenz bezeichnet man Technologien, die große Datenmengen, Algorithmen und Computer-Power nutzen, um die kognitiven Fähigkeiten von Menschen nachzuahmen.
+Prozessautomatisierung: Prozessautomatisierung nutzt einfache regelbasierte Systeme, die eine Liste von Wenn-Dann-Regeln kennen und diese auf Anfrage von oben nach unten durchgehen, um eine Aufgabe zu erfüllen.
+
+* Kognitive Fähigkeiten sind die Fähigkeiten, mit denen Menschen denken, lernen und sich erinnern (z.B. Dinge verstehen, Probleme lösen, Entscheidungen treffen). Kognitive Fähigkeiten helfen uns also dabei, Informationen aufzunehmen, zu verarbeiten und zu benutzen.
+Quelle: Vgl. eGov Campus, Kl in öffentlichen Verwaltungen
+
+---
+KATEGORIEN, MODELLE UND SYSTEME
+* Schwache KI ist auf die Ausführung bestimmter, klar definierter Aufgaben spezialisiert. Sie kann dabei menschliches Verhalten nachahmen, verfügt jedoch über kein eigenes Verständnis. Beispiele dafür sind Sprachassistenten oder Chatbots.
+* Starke KI zielt darauf ab, menschliche Intelligenz in vollem Umfang nachzubilden. Sie existiert bisher nicht.
+* KI-Modelle sind Konstrukte, die durch Datenverarbeitung und Training entstehen und dabei erlernte Parameter und Muster enthalten. Sie können danach Aufgaben wie Vorhersagen, Erkennungen oder Prüfungen übernehmen, für die sie trainiert wurden.
+* KI-Systeme beinhalten alles, was benötigt wird, um KI-Modelle praktisch einzusetzen:
+  • Programme, die das Modell ansteuern
+  • Webseiten oder Apps für die Interaktion
+  • Infrastruktur für den Betrieb des Systems
+Quelle: otris. Arten von Kl. https://www.otris.de/wiki/arten-von-ki/(29.04.2025)
+Quelle: Vgl. VITAKO/KGS+ (2024): Generative Kl in Kommunalverwaltungen. Guideline und praktische Anwendungsfälle für Large Language Modelle, S.4
+
+---
+TECHNOLOGIEN
+KI basiert auf verschiedenen Technologien, die Funktionen und Fähigkeiten einer KI erst ermöglichen.
+* Neuronale Netze: Angelehnt an die Funktionsweise des menschlichen Gehirns. Sie bestehen aus vielen verbundenen Knoten und können dadurch Informationen verarbeiten und Muster erkennen.
+* Deep Learning: Eine spezialisierte Form des maschinellen Lernens, die große Mengen unstrukturierter Daten verarbeitet.
+* Natürliche Sprachverarbeitung: Ermöglicht Maschinen, menschliche Sprache zu verstehen und zu erzeugen, angewandt in Chatbots und Sprachassistenten.
+* Objekterkennung: Maschinen können visuelle Daten interpretieren.
+
+! Generative Modelle wie ChatGPT und Gemini nutzen Deep Learning und Verfahren zur Verarbeitung natürlicher Sprache, um Inhalte zu erzeugen. Sie generieren Daten, die auf Mustern und Strukturen der zugrunde liegenden Trainingsdaten basieren.
+
+Bitte achten Sie auf die Regelungen in der Dienstanweisung:
+* Es darf keine Datenübermittlung zu Trainingszwecken erfolgen.
+* Es dürfen ausschließlich freigegebene KI-Modelle verwendet werden, die im Anhang der Dienstanweisung gelistet sind.
+
+KI-Modelle und Systeme entwickeln sich kontinuierlich weiter. Eine kritische Prüfung und verantwortungsbewusste Nutzung sind daher unerlässlich.
+Quelle: otris. Arten von Kl. https://www.otris.de/wiki/arten-von-ki/(29.04.2025)
+
+---
+EU AI ACT / KI-VERORDNUNG
+Der EU AI Act ist die europäische Verordnung über künstliche Intelligenz (KI-Verordnung).
+Sie ist der einheitliche Rechtsrahmen für alle EU-Länder und gilt somit auch für Deutschland und die deutsche Verwaltung.
+Sie legt Anforderungen fest, wie KI verantwortungsvoll zu entwickeln und einzusetzen ist.
+
+* Schutz der Grundrechte: Der Al Act legt besonderen Wert auf den Schutz der Grundrechte der Bürgerinnen und Bürger. Insbesondere sollen Diskriminierung, Verletzungen der Privatsphäre und andere potenzielle negative Auswirkungen von KI-Systemen minimiert werden.
+* Risikobasierter Ansatz: Der Einsatz von Kl wird nach dem möglichen Risiko für Menschen bewertet. Je höher das Risiko für Grundrechte, Sicherheit oder Gesundheit, desto strenger sind die Anforderungen an das KI-System - von Transparenzpflichten bis hin zu Verboten.
+* Vertrauen in KI-Systeme: Transparenz, Nachvollziehbarkeit und menschliche Kontrolle haben einen hohen Stellenwert. Nutzer* innen sollen verstehen können, wie ein KI-System funktioniert und welche Entscheidungen es trifft. So soll sichergestellt werden, dass Kl verantwortungsvoll und im Einklang mit europäischen Werten eingesetzt wird.
+* Innovationsförderung: Die KI-Verordnung soll nicht nur Risiken mindern, sondern auch gezielt Innovation fördern. Durch klar definierte Regeln, Testumgebungen (z. B. „regulatory sandboxes") und rechtliche Sicherheit sollen Unternehmen ermutigt werden, verantwortungsvolle KI-Anwendungen zu entwickeln und auf den Markt zu bringen.
+Quelle: Europäischer Rat: Vgl. Verordnung über Künstliche Intelligenz, https://www.consilium.europa.eu/de/policies/artificial-intelligence/#what (15.04.25)
+
+---
+RISIKOKATEGORIEN
+Die KI Verordnung klassifiziert KI-Systeme in vier Risikokategorien:
+* Minimales oder kein Risiko: Die meisten KI-Systeme, wie Spiele oder Spam-Filter, gelten als risikofrei und bleiben von der EU-KI-Verordnung unberührt und uneingeschränkt nutzbar.
+* Begrenztes Risiko: KI-Systeme mit begrenztem Risiko, wie z.B. Chatbots, unterliegen Transparenzpflichten, damit Nutzende erkennen können, dass Inhalte von KI stammen und diese bewusst weiterverwenden können.
+* Hohes Risiko: Hochrisiko-KI-Systeme wie in Medizin, Verkehr oder Strafverfolgung dürfen nur dann in der EU eingesetzt werden, wenn sie strenge Anforderungen wie Prüfverfahren, Transparenz und menschliche Kontrolle erfüllen.
+* Unannehmbares Risiko: In der EU sind KI-Systeme verboten, die Menschen gefährden oder ihre Rechte verletzen - darunter Verhaltensmanipulation, soziale Bewertung, Emotionserkennung in sensiblen Bereichen und Echtzeit-Gesichtserkennung im öffentlichen Raum, mit wenigen Ausnahmen für Strafverfolgung.
+
+[Zusammenfassung der Kategorien]
+Minimales/Kein Risiko:
+Künstliche Intelligenz ohne zusätzliche Verpflichtungen
+Nutzung: möglich
+Erhaltung allgemeiner gesetzlicher Standards erforderlich
+Beispiel: Spamfilter, Spracherkennung, Musikerkennung
+
+Begrenztes Risiko:
+Künstliche Intelligenz ist nicht unbedingt als solche erkennbar
+Nutzung: möglich, aber Transparenzpflicht
+User innen müssen wissen, dass sie mit einem KI-System interagieren und Kennzeichnung von Kl-generiertem Inhalt
+Beispiel: Chatbots, KI-generierte Medieninhalte, Entscheidungsvorbereitung
+
+Hohes Risiko:
+Künstliche Intelligenz kann sich nachteilig auf Grundrechte auswirken
+Nutzung: nur unter Auflagen und nach vorheriger Konformitätsprüfung
+Beispiel: Personal / Ausbildung, Kritische Infrastruktur, Demokratie-Prozesse
+
+Unannehmbares Risiko:
+Künstliche Intelligenz verstößt gegen Grundrechte
+Nutzung: Keine Zulassung / Verbot
+Erhaltung allgemeiner gesetzlicher Standards erforderlich
+Beispiel: social scoring, Manipulation menschlichen Verhaltens
+
+Quelle: MHKBD (2024): Einsatz von Künstlicher Intelligenz in der öffentlichen Verwaltung.
+Quelle: Europäischer Rat: Vgl. Verordnung über Künstliche Intelligenz, https://www.consilium.europa.eu/de/policies/artificial-intelligence/#what (15.04.25)
+
+---
+ETHISCHE FRAGEN
+
+---
+ETHIKLEITLINIEN FÜR VERTRAUENSWÜRDIGE KI
+Die Ethikleitlinien für vertrauenswürdige KI der Europäischen Kommission definieren zentrale Prinzipien und Anforderungen, um sicherzustellen, dass KI-Systeme im Einklang mit europäischen Werten wie Menschenwürde, Transparenz und Verantwortung entwickelt und eingesetzt werden.
+
+Die Leitlinien definieren eine KI als vertrauenswürdig, wenn sie die folgenden drei Kriterien erfüllt:
+* Rechtmäßigkeit: Geltende Rechts- und Verwaltungsvorschriften werden eingehalten.
+* Ethik: Ethische Grundsätze und Werte werden eingehalten.
+* Robustheit: Das KI-System funktioniert zuverlässig, bleibt sicher und richtet keinen Schaden an, auch wenn Fehler passieren.
+
+Die Leitlinien umfassen außerdem sieben Kernanforderungen für KI (1/2):
+* Vorrang menschlichen Handelns und menschlicher Aufsicht: Menschen sollen bei Entscheidungen immer die Kontrolle behalten und KI-Systeme so gestaltet sein, dass sie menschliches Handeln unterstützen und nicht ersetzen.
+* Technische Robustheit und Sicherheit: KI-Systeme sollen zuverlässig, stabil und sicher funktionieren – auch bei Fehlern oder Angriffen – und Schäden für Menschen und Umwelt vermeiden.
+Quelle: Vgl. Europäische Kommission. Ethikleitlinien für vertrauenswürdige KI, https://digital-strategy.ec.europa.eu/de/library/ethics-guidelines-trustworthy-ai (15.04.25)
+
+---
+ETHIKLEITLINIEN FÜR VERTRAUENSWÜRDIGE KI
+Die Leitlinien umfassen außerdem sieben Kernanforderungen für KI (2/2):
+* Privatsphäre und Datenqualitätsmanagement: KI-Systeme sollen die Privatsphäre der Menschen schützen und nur hochwertige, relevante und faire Daten verwenden, um verlässliche Ergebnisse zu erzielen.
+* Transparenz: KI-Systeme sollen so gestaltet sein, dass ihre Funktionsweise nachvollziehbar ist und klar erkennbar wird, wann und wie KI zum Einsatz kommt.
+* Vielfalt, Nichtdiskriminierung und Fairness: KI-Systeme sollen alle Menschen fair behandeln, Vielfalt achten und sicherstellen, dass niemand benachteiligt oder diskriminiert wird.
+* Gesellschaftliches und ökologisches Wohlergehen: KI-Systeme sollen dem Wohl der Gesellschaft dienen, soziale Teilhabe fördern und umweltfreundlich sowie nachhaltig gestaltet sein.
+* Rechenschaftspflicht: Bei der Entwicklung und Nutzung von KI-Systemen muss klar sein, wer wofür verantwortlich ist, damit Fehlverhalten erkannt, erklärt und gegebenenfalls korrigiert werden kann.
+Quelle: Vgl. Europäische Kommission. Ethikleitlinien für vertrauenswürdige KI, https://digital-strategy.ec.europa.eu/de/library/ethics-guidelines-trustworthy-ai (15.04.25)
+
+---
+VERANTWORTUNGSVOLLER EINSATZ VON KI IM BERUFLICHEN ALLTAG
+
+---
+DATENSCHUTZ UND DATENSICHERHEIT 1/2
+Bei der Verwendung von KI sind der Datenschutz und die Datensicherheit zu wahren. Es dürfen z. B. keine personenbezogenen Daten oder vertrauliche Informationen als Input für KI verwendet werden.
+
+* Keine Verwendung persönlicher Identitätsdaten wie z.B. Daten aus dem Meldeportal (oder anderer Datenbanken), Kontoverbindungen, Sozialversicherungsnummern, Namen, Anschriften
+* Keine Verwendung von medizinischen Daten
+* Keine Verwendung von vertraulichen Dienstinformationen (z.B. Geschäftsgeheimnisse, Gehaltsinformationen, Personaldaten, Rechtsverfahren)
+
+Beispiele nicht zugelassener Verwendung (zum Beispiel in ChatGPT):
+* „Liste von Gewerbetreibenden, gegen die ein Ordnungswidrigkeitsverfahren eingeleitet worden ist. Sortiere diese nach Anschriften.“
+* „Mein Kollege Ulrich Müller wird Vater. Erstelle ein Anschreiben, um ihm zu gratulieren.“
+Quelle: Vgl. MHKBD (2024) Einsatz von Künstlicher Intelligenz in der öffentlichen Verwaltung, Handreichung des Ministeriums für Heimat, Kommunales, Bau und Digitalisierung des Landes Nordrhein-Westfalen in Zusammenarbeit mit dem Städtetag Nordrhein-Westfalen, dem Landkreistag Nordrhein-Westfalen und dem Städte- und Gemeindebund Nordrhein-Westfalen
+
+---
+DATENSCHUTZ UND DATENSICHERHEIT 2/2
+Nutzen Sie keine vertraulichen Daten und anonymisieren Sie Daten, bevor Sie diese in Systemen der KI verwenden. Übernehmen Sie Antworten nicht ungeprüft (Beachte: „Grundsatz des Vorrangs menschlicher Entscheidungen“).
+
+* Bei der Eingabe von Ton und Bild in KI-Systeme ist genauso wie bei Texten auf Datenschutz und IT-Sicherheit zu achten.
+* Screenshots können sensible Informationen enthalten, während Hintergrundgespräche in Audioaufnahmen z.B. unbeabsichtigt personenbezogene Daten preisgeben könnten.
+* Seien Sie daher aufmerksam und hinterfragen stets, welche Informationen Sie ungewollt mit preisgeben könnten!
+
+Die vorsätzliche oder grob fahrlässige unzulässige Nutzung von KI-Verfahren und die unzulässige Nutzung personenbezogener Daten innerhalb von KI stellt einen arbeits- bzw. dienstrechtlichen Verstoß dar.
+Quelle: Vgl. MHKBD (2024) [...]
+
+---
+URHEBERRECHT UND GEISTIGES EIGENTUM
+KI-Verfahren erstellen keine originären eigenen Inhalte. Das Ergebnis wird aus Daten erstellt, die aus öffentlich-zugänglichen Daten Dritter gesammelt und mittels maschinellem Lernen verarbeitet werden. Eine Verwendung kann daher mögliche Forderungen der Rechteinhaber*in und möglicherweise auch Regressansprüche nach sich ziehen.
+
+Beispiel:
+Die KI soll mehrere Berichte aus Zeitschriften über ein bestimmtes Thema zusammenfassen. Die Zusammenfassung soll auf der Homepage veröffentlicht werden.
+* Einverständnis liegt nicht vor: Keine Veröffentlichung.
+* Einverständnis liegt vor: Kann veröffentlicht werden.
+
+Fazit: Verwenden Sie keine urheberrechtlich-geschützten Inhalte ohne Genehmigung oder Lizenz als Input für die KI (zum Beispiel: Texte, Bilder, Musik).
+Quelle: Vgl. minKB (2024) Einsatz von Künstlicher Intelligenz in der öffentlichen Verwaltung, Handreichung des Ministeriums für Heimat, Kommunales, Bau und Digitalisierung des Landes Nordrhein-Westfalen in Zusammenarbeit mit dem Städtetag Nordrhein-Westfalen, dem Landkreistag Nordrhein-Westfalen und dem Städte- und Gemeindebund Nordrhein-Westfalen
+
+---
+INFORMATIONSSICHERHEIT
+* Die Verwendung von KI-Chatbots muss der geltenden Dienstanweisung zur Nutzung der IT-Infrastruktur der Verwaltung entsprechen.
+* Die Einhaltung der Schutzziele der Verfügbarkeit, Vertraulichkeit und Integrität der Ergebnisse/Ausgaben sind von den Nutzerinnen und Nutzern zu verantworten.
+* Alle Zugriffe auf KI-Chatbots müssen durch die Erstellung eines persönlichen Benutzerkontos mit der dienstlichen E-Mail Adresse erfolgen.
+* Abweichungen oder verdächtige Aktivitäten müssen sofort über die bekannten Meldewege gemeldet werden, z.B. Phishing oder kompromittierte Computer.
+* Alle Interaktionen mit KI-Sprachmodellen werden protokolliert, um Sicherheitsvorfälle zu identifizieren und forensische Analysen durchzuführen.
+
+---
+LETZTENTSCHEIDUNGSBEFUGNIS DES MENSCHEN
+KI-Sprachmodelle können als Hilfsmittel bei der Bearbeitung dienstlicher Aufgaben eingesetzt werden.
+Dabei ist es wichtig, die Ergebnisse stets kritisch zu hinterfragen und auf Richtigkeit zu überprüfen.
+
+* Die Ausgaben von KI-Sprachmodellen sind vor der Übernahme für die eigene Arbeit kritisch zu hinterfragen. Sie dürfen nicht die alleinige Grundlage für Entscheidungen bilden.
+* Bei der Verwendung von Ergebnissen, die durch KI-Sprachmodelle erzeugt werden, ist darauf zu achten, keine Vorurteile zu reproduzieren und Diskriminierung zu vermeiden.
+* KI-Sprachmodelle können sogenannte „Halluzinationen“ erzeugen, bei denen Inhalte erfunden oder falsch dargestellt werden. Deshalb müssen Ergebnisse immer sorgfältig geprüft werden.
+* Die Qualität der Ausgaben von KI-Sprachmodellen ist unter anderem von der genauen und detaillierten Formulierung von Frage- bzw. Aufgabenstellungen abhängig.
+
+Die Verantwortung für die Verwendung von Inhalten, die durch KI-Sprachmodelle generiert wurden, liegt also immer bei den Mitarbeitenden. Entscheidungen werden von den Mitarbeitenden auf der Grundlage von Fachwissen getroffen und KI-Modelle dienen lediglich als Hilfsmittel.
+
+---
+TRANSPARENZPFLICHT
+Ergebnisse, die mit einer KI erstellt wurden, unterliegen unter bestimmten Umständen der Transparenzpflicht.
+Formulierungshilfe: „Die Inhalte dieses Textes wurden mit Unterstützung von Künstlicher Intelligenz erstellt.“
+
+Eine Informationspflicht besteht gem. Art 50. Abs. 1 KI-VO nur dann, wenn die KI direkt mit Menschen kommuniziert. Das ist zum Beispiel der Fall bei Chatbots, die einfache Fragen beantworten. In solchen Fällen muss für die Nutzenden klar erkennbar sein, dass sie nicht mit einem echten Menschen, sondern mit einer KI sprechen.
+
+Wenn die KI hingegen nur im Hintergrund arbeitet – zum Beispiel um eine Antwort vorzubereiten oder Texte automatisch zu übersetzen – dann muss das nicht offengelegt werden. In diesen Fällen unterstützt die KI nur die Mitarbeitenden, die am Ende selbst entscheiden, was kommuniziert wird.
+
+„Die Kennzeichnungspflicht entfällt also dann, wenn der Text auf Fehler und Unwahrheiten hin überprüft wurde.“ Für Fehler oder Unwahrheiten, die der Kontrolle entgehen, trägt die/der Mitarbeitende die Verantwortung.
+Quelle: VITAKO/KGS+ (2024): Generative Kl in Kommunalverwaltungen. Guideline und praktische Anwendungsfälle für Large Language Modelle, S.7
+Quelle: Vgl. Mayer, Sebastian (2023). Nutzung von KI-Systemen. BRAND Rechtsanwälte, Ausgabe Mai 2023, S.9
+Quelle: Vgl. LLP Law Patent. Kennzeichnungspflicht für KI-generierte Inhalte, https://www.llp-law.de/kennzeichnungspflicht-fuer-ki-generierte-inhalte/ (15.04.25)
+
+---
+PROMPTS UND EINSATZBEREICHE
+
+---
+PROMPTS
+Ein Prompt ist die Eingabe oder Anweisung, die einem KI-Modell übermittelt wird, um eine bestimmte Antwort oder Ausgabe zu erzeugen. Er fungiert als Ausgangspunkt für die Textgenerierung, indem er dem Modell den notwendigen Kontext und die Richtung vorgibt.
+
+Gute Prompt Gestaltung:
+* Prompt Gestaltung mit KI: „Bitte schlage mir 5 kreative Prompts für einen Werbetext vor.“
+* Klar und spezifisch: „Schreibe eine kurze Einleitung über die Einflüsse vom Flugzeugverkehr auf den Klimawandel.“
+* Kontext bereitstellen: „Erstelle eine Erklärung zu den Bedingungen einer Erosion für einen 13-jährigen Schüler bzw. eine 13-jährige Schülerin.“
+* Formatierung angeben: „Liste die Vorteile von einer gesunden Ernährung auf und verwende Stichpunkte.“
+
+Schlechte Prompt Gestaltung:
+* Vage und unklar: „Erzähl mir eine Geschichte.“ (Unklar, was genau gewünscht ist.)
+* Zu allgemein: „Schreibe einen Text über Pflanzen.“ (Es fehlt an spezifischem Fokus oder Kontext.)
+* Fehlende Struktur: „Was möchtest du erreichen?“ (Das Modell weiß nicht, wie es antworten soll oder in welchem Format.)
+* Geschlossene Fragen stellen: „Ist Obdachlosigkeit ein Problem?“
+
+---
+EINSATZBEREICHE
+Die KI bietet vielfältige Möglichkeiten in verschiedenen Sektoren, von automatisierter Texterstellung bis hin zur Datenanalyse. Allerdings bringt der Einsatz von KI auch ethische und praktische Herausforderungen mit sich, die in verschiedenen Kontexten vorsichtig betrachtet werden müssen.
+
+Arbeitsbereiche, in denen der Einsatz von KI möglich ist:
+* Text- und Bilderstellung (z.B. Erstellen von Informationsmaterialien für Bürgerinnen und Bürger)
+* Textzusammenfassung und Transkription von Audioinhalten (z.B. Protokolle erstellen)
+* Datenanalyse und -verarbeitung großer Datenmenge (z.B. Auswertung von Bildern aus der Straßenbefahrung)
+* Entscheidungsunterstützung (z.B. Vorprüfung von Anträgen mit Ermessensspielraum)
+* Automatisierung von Verwaltungsprozessen (z.B. automatische Beantwortung von Standardanfragen)
+
+Arbeitsbereiche, in denen der Einsatz von KI ausgeschlossen ist:
+* Bewertung des Sozialverhaltens (z.B. Analyse der Online-Aktivitäten von Mitarbeitenden inkl. anschließender Bewertung)
+* Manipulation menschlichen Verhaltens (z.B. durch personalisierte Inhalte, die Menschen in ihrem Verhalten oder ihrer Entscheidungsfindung beeinflussen)
+Quelle: Vgl. MHKBD (2024) [...]
+
+---
+TEXTE ERSTELLEN
+Bei der Texterstellung erfolgt die Generierung neuer Texte nicht nur durch die Interaktion über Frage-Antwort-Formate in Chatbots. Es besteht auch die Möglichkeit, komplette Texte einer KI zur Verfügung zu stellen, die diese dann verarbeitet und analysiert.
+
+Anwendungsfälle:
+1. Neue Texte generieren: KI kann verwendet werden, um Pressetexte, E-Mails oder andere Arten von Kommunikationsmaterialien zu erstellen.
+2. Bestehende Texte optimieren und Feedback geben: Bestehende Texte können analysiert und wahlweise verbessert werden.
+3. Texte zusammenfassen: Durch die Verarbeitung von Dokumenten können relevante Informationen extrahiert und in prägnante Zusammenfassungen umgewandelt werden.
+4. Texte umstellen: Bei Mustervorlagen kann ein Text in eine gewünschte Struktur gebracht werden.
+5. Texte in einfache Sprache übersetzen: KI kann Texte so umformulieren, dass sie für ein breiteres Publikum verständlich sind.
+6. Tabellen & Mindmaps in Texte umwandeln: Visuelle Daten in einen narrativen Text integrieren.
+Quelle: Vgl. VITAKO/KGS+ (2024) Generative Kl in Kommunalverwaltungen. Guideline und praktische Anwendungsfälle für Large Language Modelle, S.10 f.
+
+---
+TABELLEN & ÜBERSICHTEN
+Die Darstellung, Sortierung und statistische Auswertung von Daten ist eine grundlegende Funktion jedes Tabellenkalkulationsprogramms. Schwieriger gestaltet sich die Erstellung von Tabellen aus bereits verarbeiteten Informationen. KI-Anwendungen ermöglichen es, Tabellen beispielsweise aus Texten, Mindmaps oder anderen digitalen Grafiken zu erstellen.
+
+Anwendungsfälle:
+* Tabellen erstellen, beispielsweise aus Texten, Mindmaps oder fiktiven Daten bzw. Musterdatensätzen.
+* Tabellen analysieren, etwa durch die Auswertung von Freitext-Feedbackfeldern.
+* Projektpläne oder Diagramme entwickeln.
+* Präsentationen mit Bild- und Textelementen gestalten.
+* Textinhalte in Mindmaps, Infografiken, Diagramme und Organigramme umwandeln.
+
+! Die Verarbeitung von Dokumenten kann in manchen Anwendungen Einschränkungen unterliegen, wie beispielsweise bei der Anzahl der hochgeladenen Dateien. Seien Sie kreativ und fassen Sie Dateien vorab zusammen oder entfernen Sie Elemente, die für Ihr Anliegen nicht relevant sind.
+
+Beispielszenario:
+Darstellung:
+Bericht | Fehlende Informationen/Kennzahlen
+Bericht A | CO2-Emissionen, Wasserverbrauch, Recyclingquote
+Bericht B | Energieverbrauch
+Bericht C | Nachhaltige Beschaffungspraktiken, Zielvorgaben
+Bericht D | Einfluss auf die Biodiversität, Lieferkettenanalyse
+
+[Beispiel-Prompt im Bild:] Vergleiche die Nachhaltigkeitsberichte aus den hochgeladenen PDF-Dateien mit dem ersten Dokument, das als Referenz dient. Welche wesentlichen Informationen oder Kennzahlen fehlen in den einzelnen Berichten im Vergleich zur Referenz? Fasse die Unterschiede in einer übersichtlichen Tabelle zusammen.
+Quelle: Vgl. VITAKO/KGS+ (2024) Generative Kl in Kommunalverwaltungen. Guideline und praktische Anwendungsfälle für Large Language Modelle, S.12 f.
+
+---
+DATEN STRUKTURIEREN & ERKLÄRVIDEOS ERSTELLEN
+Anwendungsfälle:
+* Auswertung großer Datenmengen aus Tabellenkalkulationsprogrammen
+* Herstellung von Kreuzbeziehungen zwischen Tabellen
+* Durchführung von Plausibilitätsprüfungen
+* Erstellung von Erklärvideos, etwa für komplexe Prozesse
+* Anfertigung animierter Präsentationen, beispielsweise zur dynamischen Darstellung von Daten und Informationen
+* Bereitstellung von Qualifizierungsinhalten in interaktiver und ansprechender Form
+* Generierung von Bildern, wie etwa Infografiken, Logos oder Beispielbildern für Präsentationen
+
+! Wenn Sie Bilder und Videos erstellen, sollten Sie möglichst detaillierte Prompts oder Video-Skripte verfassen. Beispielsweise können Sie darauf eingehen, ob das fertige Bild eine Zeichnung oder ein Foto sein soll, welche Stimmung Sie sich vorstellen oder welche Gegenstände im fertigen Bild vorkommen sollen.
+
+Beispielszenario:
+[Beispiel-Prompt im Bild:] Nutze das folgende Skript, um ein Erklärvideo für neue Mitarbeitende zu erstellen. In diesem Video soll aufgezeigt werden, wo sich die Notausgänge und Brandlöscher im Gebäude befinden.
+Quelle: Vgl. VITAKO/KGS+ (2024) Generative Kl in Kommunalverwaltungen. Guideline und praktische Anwendungsfälle für Large Language Modelle, S.14 ff.
+
+---
+RECHERCHE DURCHFÜHREN
+Bei der Erstellung neuer Texte oder der Kategorisierung von Inhalten analysieren KI-Modelle Informationen. Basierend auf dieser Analyse werden Inhalte entweder neu generiert oder eingestuft. Diese Funktion zur inhaltlichen Analyse von Dokumenten kann auch für Recherchearbeiten genutzt werden. Besonders bei umfangreichen Texten und Informationen, die über mehrere Dokumente verteilt sind, haben generative KI-Modelle das Potenzial, Recherchen effizient durchzuführen und Informationen übersichtlich aufzubereiten.
+
+Anwendungsfälle:
+* Recherche für Dienstanweisungen
+* Aufbau von Wissensdatenbanken
+* Bereitstellung von Antworten auf Anfragen
+* Unterstützung bei gängigen Office-Tools wie Excel
+* Behebung einfacher IT-Probleme
+
+! Bei der Nutzung der kostenlosen Versionen von KI-Chatbots ist Vorsicht geboten. Diese Modelle greifen häufig nicht auf aktuelle Informationen oder Echtzeit-Daten zu. Deshalb können Inhalte veraltet oder unvollständig sein. Eine Überprüfung der Aussagen anhand verlässlicher und aktueller Quellen ist zwingend erforderlich.
+
+Beispielszenario:
+[Beispiel-Prompt im Bild:] Untersuche alle wesentlichen Unterschiede zwischen den Datenschutzgesetzen von Hessen und NRW. Bleibe die Kernaussage destilliert hervor, insbesondere in Bezug auf die Regelungen und Pflichten.
+Quelle: Vgl. VITAKO/KGS+ (2024) Generative Kl in Kommunalverwaltungen. Guideline und praktische Anwendungsfälle für Large Language Modelle, S.18 f.
+
+---
+IDEEN KREIEREN & DIALOGE FÜHREN
+Eine effektive Nutzung von KI kann wesentlich dazu beitragen, kreatives Arbeiten in Verwaltungen zu fördern und Innovationen zu ermöglichen. Durch geschicktes Prompting können im Dialog mit der KI neue Ideen entwickelt, Vorschläge für unkonventionelle Vorgehensweisen erörtert und völlig neue Ansätze im Verwaltungsalltag verfolgt werden. Dabei sollte stets beachtet werden, dass Vorschläge in der Interaktion zwischen Mensch und KI gemeinsam optimiert werden. Die endgültige Entscheidung liegt immer beim Menschen, nicht bei der KI.
+
+Anwendungsfälle:
+* Agenden und Abläufe entwickeln, beispielsweise für Veranstaltungen und Meetings.
+* Leitfäden erstellen und passende Fragen formulieren.
+* Konzepte entwickeln, zum Beispiel zur Gewinnung von Personal.
+* Vorträge und Präsentationen systematisch aufbauen.
+* Interne und externe Serviceoptimierungen initiieren, indem Verbesserungsideen gesammelt werden.
+
+! Geben Sie sich nicht mit der ersten Antwort einer KI zufrieden. Haken Sie nach und verfeinern Sie Ihren Prompt. Die wirklich guten Ideen entstehen in der Interaktion zwischen Mensch und KI. Sie können der KI auch Ihren eigenen Vorschlag unterbreiten und um Feedback oder Ergänzungen bitten.
+Quelle: Vgl. VITAKO/KGS+ (2024) Generative Kl in Kommunalverwaltungen. Guideline und praktische Anwendungsfälle für Large Language Modelle, S.20 f.
+
+---
+BILDGENERIERUNG
+Anwendungsfälle:
+* Generierung von Infografiken, die komplexe Informationen übersichtlich zusammenfassen.
+* Entwicklung von visuellen Lernmaterialien, die Schulungen für Mitarbeitende unterstützen.
+* Erstellung von Illustrationen oder Animationen, die komplexe Themen verständlicher machen.
+* Erstellung von Schritt-für-Schritt-Anleitungen im Bildformat.
+* Visualisierung von Ergebnissen aus Umfragen oder Evaluierungen.
+* Generierung von visuellen Anleitungen für Notfallsituationen.
+
+! Achten Sie bei der Bildgenerierung darauf, dass die Abbildung die erzeugten Objekte richtig darstellt.
+Beispiel am Bild: Die Finger passen nicht zu den Händen eines Menschen.
+
+! Es besteht das Risiko der Verzerrung oder Stereotypisierung.
+
+! Die Nutzung von Bildern, die mit Hilfe von KI oder anderen generativen Techniken erstellt wurden, kann rechtliche Probleme aufwerfen, insbesondere in Bezug auf Urheberrechte und geistiges Eigentum.
+
+! Generierte Bilder können für irreführende, betrügerische Zwecke verwendet werden oder werden fälschlicherweise als echte Bilder ausgegeben.
+```
